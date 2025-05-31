@@ -8,13 +8,15 @@ import { Navbar } from "@/components/Navbar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
       <Navbar />
-      <Hero />
-      <Features />
-      <ComponentsShowcase />
-      <Pricing />
-      <Footer />
+      <div className="animate-fade-in">
+        <Hero />
+        <Features />
+        <ComponentsShowcase />
+        <Pricing />
+        <Footer />
+      </div>
     </div>
   );
 };
