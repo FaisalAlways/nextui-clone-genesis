@@ -43,7 +43,7 @@ const Docs = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Navbar />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -53,12 +53,12 @@ const Docs = () => {
             <div className="sticky top-24">
               <div className="mb-6">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500 w-4 h-4" />
                   <Input
                     placeholder="Search docs..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 dark:bg-gray-800 dark:border-gray-700"
                   />
                 </div>
               </div>
@@ -66,7 +66,7 @@ const Docs = () => {
               <nav className="space-y-6">
                 {sidebarSections.map((section) => (
                   <div key={section.title}>
-                    <h3 className="font-semibold text-gray-900 mb-3">{section.title}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-3">{section.title}</h3>
                     <ul className="space-y-2">
                       {section.items.map((item) => (
                         <li key={item.name}>
@@ -74,8 +74,8 @@ const Docs = () => {
                             onClick={() => setActiveSection(item.href.slice(1))}
                             className={`text-sm w-full text-left px-3 py-2 rounded-md transition-colors ${
                               activeSection === item.href.slice(1)
-                                ? "bg-blue-100 text-blue-700"
-                                : "text-gray-600 hover:text-blue-600 hover:bg-gray-100"
+                                ? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
+                                : "text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                             }`}
                           >
                             {item.name}
@@ -91,38 +91,38 @@ const Docs = () => {
 
           {/* Main Content */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-8">
               {activeSection === "introduction" && (
                 <div className="space-y-6">
                   <div>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Introduction</h1>
-                    <p className="text-xl text-gray-600 mb-6">
+                    <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Introduction</h1>
+                    <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
                       NextUI is a modern React UI library that makes it easy to build beautiful and accessible user interfaces.
                     </p>
                     <Badge className="mb-6">v2.4.0</Badge>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-                    <div className="text-center p-6 border border-gray-200 rounded-lg">
+                    <div className="text-center p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
                       <Zap className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Fast</h3>
-                      <p className="text-sm text-gray-600">Built for performance with minimal bundle size</p>
+                      <h3 className="font-semibold mb-2 dark:text-gray-100">Fast</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Built for performance with minimal bundle size</p>
                     </div>
-                    <div className="text-center p-6 border border-gray-200 rounded-lg">
+                    <div className="text-center p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
                       <Palette className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Customizable</h3>
-                      <p className="text-sm text-gray-600">Fully customizable with CSS-in-JS</p>
+                      <h3 className="font-semibold mb-2 dark:text-gray-100">Customizable</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Fully customizable with CSS-in-JS</p>
                     </div>
-                    <div className="text-center p-6 border border-gray-200 rounded-lg">
+                    <div className="text-center p-6 border border-gray-200 dark:border-gray-700 rounded-lg">
                       <Users className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-                      <h3 className="font-semibold mb-2">Accessible</h3>
-                      <p className="text-sm text-gray-600">WAI-ARIA compliant components</p>
+                      <h3 className="font-semibold mb-2 dark:text-gray-100">Accessible</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">WAI-ARIA compliant components</p>
                     </div>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Features</h2>
-                    <ul className="space-y-2 text-gray-700">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Features</h2>
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                       <li>• TypeScript support out of the box</li>
                       <li>• Dark mode support</li>
                       <li>• Responsive design</li>
@@ -136,21 +136,21 @@ const Docs = () => {
 
               {activeSection === "installation" && (
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">Installation</h1>
+                  <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Installation</h1>
                   
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Package Manager</h2>
-                    <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Package Manager</h2>
+                    <div className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 mb-4">
                       <code className="text-green-400">npm install @nextui-org/react framer-motion</code>
                     </div>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
                       NextUI requires React 18 or later and framer-motion for animations.
                     </p>
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">CDN</h2>
-                    <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">CDN</h2>
+                    <div className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 mb-4">
                       <code className="text-green-400 text-sm">
                         {`<script src="https://unpkg.com/@nextui-org/react@latest/dist/index.js"></script>`}
                       </code>
@@ -158,8 +158,8 @@ const Docs = () => {
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Requirements</h2>
-                    <ul className="space-y-2 text-gray-700">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Requirements</h2>
+                    <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                       <li>• React 18.0.0 or later</li>
                       <li>• TypeScript 4.9.0 or later (optional)</li>
                       <li>• framer-motion 6.0.0 or later</li>
@@ -170,14 +170,14 @@ const Docs = () => {
 
               {activeSection === "setup" && (
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">Setup</h1>
+                  <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Setup</h1>
                   
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Provider Setup</h2>
-                    <p className="text-gray-600 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Provider Setup</h2>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
                       Wrap your application with the NextUIProvider:
                     </p>
-                    <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                    <div className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 mb-4">
                       <pre className="text-green-400 text-sm">
 {`import { NextUIProvider } from '@nextui-org/react'
 
@@ -193,8 +193,8 @@ function App() {
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Import Components</h2>
-                    <div className="bg-gray-900 rounded-lg p-4 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Import Components</h2>
+                    <div className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4 mb-4">
                       <pre className="text-green-400 text-sm">
 {`import { Button, Input, Card } from '@nextui-org/react'
 
@@ -214,18 +214,18 @@ export default function MyComponent() {
 
               {activeSection === "button" && (
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">Button</h1>
+                  <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Button</h1>
                   
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Basic Usage</h2>
-                    <div className="border border-gray-200 rounded-lg p-6 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Basic Usage</h2>
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-4">
                       <div className="flex gap-4 mb-4">
                         <Button>Default</Button>
                         <Button className="bg-blue-600 hover:bg-blue-700 text-white">Primary</Button>
                         <Button variant="outline">Secondary</Button>
                       </div>
                     </div>
-                    <div className="bg-gray-900 rounded-lg p-4">
+                    <div className="bg-gray-900 dark:bg-gray-950 rounded-lg p-4">
                       <pre className="text-green-400 text-sm">
 {`<Button>Default</Button>
 <Button color="primary">Primary</Button>
@@ -235,8 +235,8 @@ export default function MyComponent() {
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Sizes</h2>
-                    <div className="border border-gray-200 rounded-lg p-6 mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Sizes</h2>
+                    <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-4">
                       <div className="flex items-center gap-4 mb-4">
                         <Button size="sm">Small</Button>
                         <Button>Medium</Button>
@@ -246,35 +246,35 @@ export default function MyComponent() {
                   </div>
 
                   <div>
-                    <h2 className="text-2xl font-semibold mb-4">Props</h2>
+                    <h2 className="text-2xl font-semibold mb-4 dark:text-gray-100">Props</h2>
                     <div className="overflow-x-auto">
-                      <table className="min-w-full border border-gray-200">
-                        <thead className="bg-gray-50">
+                      <table className="min-w-full border border-gray-200 dark:border-gray-700">
+                        <thead className="bg-gray-50 dark:bg-gray-700">
                           <tr>
-                            <th className="px-4 py-2 text-left">Prop</th>
-                            <th className="px-4 py-2 text-left">Type</th>
-                            <th className="px-4 py-2 text-left">Default</th>
-                            <th className="px-4 py-2 text-left">Description</th>
+                            <th className="px-4 py-2 text-left dark:text-gray-100">Prop</th>
+                            <th className="px-4 py-2 text-left dark:text-gray-100">Type</th>
+                            <th className="px-4 py-2 text-left dark:text-gray-100">Default</th>
+                            <th className="px-4 py-2 text-left dark:text-gray-100">Description</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr className="border-t">
-                            <td className="px-4 py-2">size</td>
-                            <td className="px-4 py-2">sm | md | lg</td>
-                            <td className="px-4 py-2">md</td>
-                            <td className="px-4 py-2">The size of the button</td>
+                          <tr className="border-t dark:border-gray-700">
+                            <td className="px-4 py-2 dark:text-gray-300">size</td>
+                            <td className="px-4 py-2 dark:text-gray-300">sm | md | lg</td>
+                            <td className="px-4 py-2 dark:text-gray-300">md</td>
+                            <td className="px-4 py-2 dark:text-gray-300">The size of the button</td>
                           </tr>
-                          <tr className="border-t">
-                            <td className="px-4 py-2">color</td>
-                            <td className="px-4 py-2">primary | secondary | success</td>
-                            <td className="px-4 py-2">default</td>
-                            <td className="px-4 py-2">The color theme</td>
+                          <tr className="border-t dark:border-gray-700">
+                            <td className="px-4 py-2 dark:text-gray-300">color</td>
+                            <td className="px-4 py-2 dark:text-gray-300">primary | secondary | success</td>
+                            <td className="px-4 py-2 dark:text-gray-300">default</td>
+                            <td className="px-4 py-2 dark:text-gray-300">The color theme</td>
                           </tr>
-                          <tr className="border-t">
-                            <td className="px-4 py-2">disabled</td>
-                            <td className="px-4 py-2">boolean</td>
-                            <td className="px-4 py-2">false</td>
-                            <td className="px-4 py-2">Whether the button is disabled</td>
+                          <tr className="border-t dark:border-gray-700">
+                            <td className="px-4 py-2 dark:text-gray-300">disabled</td>
+                            <td className="px-4 py-2 dark:text-gray-300">boolean</td>
+                            <td className="px-4 py-2 dark:text-gray-300">false</td>
+                            <td className="px-4 py-2 dark:text-gray-300">Whether the button is disabled</td>
                           </tr>
                         </tbody>
                       </table>
@@ -286,16 +286,16 @@ export default function MyComponent() {
               {/* Add more sections as needed */}
               {!["introduction", "installation", "setup", "button"].includes(activeSection) && (
                 <div className="space-y-6">
-                  <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                  <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                     {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
                   </h1>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     Documentation for {activeSection} is coming soon. Stay tuned for updates!
                   </p>
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                     <div className="flex items-center">
-                      <Book className="w-5 h-5 text-blue-600 mr-2" />
-                      <span className="text-blue-800">This section is under development</span>
+                      <Book className="w-5 h-5 text-blue-600 dark:text-blue-400 mr-2" />
+                      <span className="text-blue-800 dark:text-blue-300">This section is under development</span>
                     </div>
                   </div>
                 </div>
