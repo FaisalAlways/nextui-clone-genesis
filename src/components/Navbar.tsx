@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Menu, X, Github, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,17 +12,17 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">N</span>
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 NextUI
               </span>
-            </div>
+            </Link>
             
             <div className="hidden md:flex space-x-8">
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Docs</a>
+              <Link to="/docs" className="text-gray-700 hover:text-blue-600 transition-colors">Docs</Link>
               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Components</a>
               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Templates</a>
               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Examples</a>
@@ -53,7 +54,7 @@ export const Navbar = () => {
 
         {isOpen && (
           <div className="md:hidden py-4 space-y-2 border-t border-gray-200">
-            <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Docs</a>
+            <Link to="/docs" className="block py-2 text-gray-700 hover:text-blue-600">Docs</Link>
             <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Components</a>
             <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Templates</a>
             <a href="#" className="block py-2 text-gray-700 hover:text-blue-600">Examples</a>
