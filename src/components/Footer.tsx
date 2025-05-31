@@ -1,5 +1,5 @@
 
-import { Github, Twitter, Discord, Heart } from "lucide-react";
+import { Github, Twitter, MessageCircle, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const footerLinks = {
@@ -32,7 +32,7 @@ export const Footer = () => {
                 <Twitter className="w-5 h-5" />
               </Button>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
-                <Discord className="w-5 h-5" />
+                <MessageCircle className="w-5 h-5" />
               </Button>
             </div>
           </div>
