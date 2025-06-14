@@ -43,37 +43,45 @@ const features = [
 
 export const Features = () => {
   return (
-    <section id="features" className="py-24 bg-gradient-to-br from-gray-50/50 to-blue-50/50 dark:from-gray-950/50 dark:to-blue-950/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-black mb-6 animate-fade-in">
-            <span className="bg-gradient-to-r from-gray-900 to-blue-900 dark:from-gray-100 dark:to-blue-100 bg-clip-text text-transparent">
+    <section id="features" className="py-32 relative overflow-hidden">
+      {/* Futuristic background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]" />
+      
+      <div className="relative max-w-[1440px] mx-auto px-8">
+        <div className="text-center mb-24">
+          <h2 className="text-5xl sm:text-6xl font-black mb-8 animate-fade-in">
+            <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
               Why Future DevOps?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto animate-fade-in delay-200 leading-relaxed">
-            Built by developers, for developers. Every component is crafted with production-ready applications in mind.
+          <p className="text-2xl text-gray-300 max-w-4xl mx-auto animate-fade-in delay-200 leading-relaxed">
+            Built by developers, for developers. Every component is engineered with production-ready applications in mind.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm hover:-translate-y-3 animate-fade-in overflow-hidden relative"
+                className="group hover:shadow-2xl transition-all duration-700 border-0 bg-white/5 backdrop-blur-xl hover:-translate-y-3 animate-fade-in overflow-hidden relative hover:shadow-blue-500/20"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <CardContent className="p-8 relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg`}>
-                    <Icon className="w-7 h-7 text-white" />
+                {/* Animated border */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-[1px] bg-gray-900/90 backdrop-blur-xl rounded-lg" />
+                
+                <CardContent className="p-10 relative z-10">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl`}>
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-blue-300 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">
+                  <p className="text-gray-300 leading-relaxed text-lg">
                     {feature.description}
                   </p>
                 </CardContent>
