@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl border-b border-white/10 transition-all duration-300 shadow-2xl bg-gray-900/80">
-      <div className="max-w-[1440px] mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-10">
             <Link to="/" className="flex items-center space-x-4 group">
@@ -35,15 +35,15 @@ export const Navbar = () => {
               <Link to="/docs" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Documentation
               </Link>
-              <a href="#components" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+              <Link to="/components" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Components
-              </a>
-              <a href="#examples" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+              </Link>
+              <Link to="/examples" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Examples
-              </a>
-              <a href="#community" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
+              </Link>
+              <Link to="/community" className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-105 relative font-medium text-lg after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">
                 Community
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -77,9 +77,9 @@ export const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-8 space-y-6 border-t border-white/10 animate-fade-in backdrop-blur-xl">
             <Link to="/docs" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Documentation</Link>
-            <a href="#components" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Components</a>
-            <a href="#examples" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Examples</a>
-            <a href="#community" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Community</a>
+            <Link to="/components" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Components</Link>
+            <Link to="/examples" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Examples</Link>
+            <Link to="/community" className="block py-4 text-gray-300 hover:text-white transition-colors duration-300 font-medium text-lg">Community</Link>
             <div className="pt-6 flex flex-col space-y-4">
               <Button variant="ghost" size="sm" onClick={toggleTheme} className="justify-start hover:scale-105 transition-all duration-300 text-gray-300 hover:text-white hover:bg-white/10">
                 {theme === 'light' ? <Moon className="w-5 h-5 mr-3" /> : <Sun className="w-5 h-5 mr-3" />}

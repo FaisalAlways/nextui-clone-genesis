@@ -1,5 +1,5 @@
 
-import { ArrowRight, Play, Star, Github, Sparkles } from "lucide-react";
+import { ArrowRight, Play, Star, Github, Code2, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -17,9 +17,9 @@ export const Hero = () => {
       <div className="absolute top-40 right-20 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-700" />
       <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse delay-1000" />
       
-      <div className="relative max-w-[1440px] mx-auto px-8 text-center">
+      <div className="relative max-w-7xl mx-auto px-8 text-center">
         <Badge className="mb-8 bg-white/10 backdrop-blur-sm text-white border-white/20 animate-fade-in shadow-lg hover:scale-105 transition-transform duration-300">
-          <Sparkles className="w-4 h-4 mr-1 animate-spin-slow" />
+          <Code2 className="w-4 h-4 mr-1 animate-pulse" />
           Open Source • MIT License
         </Badge>
         
@@ -30,7 +30,7 @@ export const Hero = () => {
         </h1>
         
         <p className="text-3xl sm:text-4xl font-light text-gray-300 mb-6 animate-fade-in delay-300">
-          Professional React UI Components
+          A modern open-source UI component library
         </p>
         
         <p className="text-xl text-gray-400 mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in delay-400">
@@ -38,17 +38,42 @@ export const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 animate-fade-in delay-500">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-6 text-xl font-bold transform hover:scale-105 transition-all duration-300 hover:shadow-2xl shadow-blue-500/25 border-0">
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-12 py-6 text-xl font-bold transform hover:scale-105 transition-all duration-300 hover:shadow-2xl shadow-blue-500/25 border-0 group">
             Get Started
             <ArrowRight className="w-6 h-6 ml-3 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" size="lg" className="px-12 py-6 text-xl font-bold border-2 border-white/20 hover:border-white/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20">
+          <Button variant="outline" size="lg" className="px-12 py-6 text-xl font-bold border-2 border-white/20 hover:border-white/40 transform hover:scale-105 transition-all duration-300 hover:shadow-2xl bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 group">
             <Play className="w-6 h-6 mr-3 transition-transform group-hover:scale-110" />
             View Components
           </Button>
         </div>
+
+        {/* Animated Code Preview */}
+        <div className="relative max-w-4xl mx-auto animate-fade-in delay-700">
+          <div className="bg-gray-950/80 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-400">
+                <Terminal className="w-4 h-4" />
+                <span className="text-sm font-mono">component.tsx</span>
+              </div>
+            </div>
+            <div className="text-left font-mono text-sm">
+              <div className="text-gray-500">// Import Future DevOps components</div>
+              <div className="text-blue-400">import</div> <div className="text-white">{'{ Button, Card, Badge }'}</div> <div className="text-blue-400">from</div> <div className="text-green-400">'@future-devops/ui'</div>
+              <div className="mt-4 text-gray-500">// Use them in your app</div>
+              <div className="text-purple-400">{'<Button'}</div> <div className="text-yellow-400">variant</div>=<div className="text-green-400">"primary"</div> <div className="text-yellow-400">size</div>=<div className="text-green-400">"lg"</div><div className="text-purple-400">{'>'}</div>
+              <div className="ml-4 text-white">Get Started</div>
+              <div className="text-purple-400">{'</Button>'}</div>
+            </div>
+          </div>
+        </div>
         
-        <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-16 text-lg text-gray-300 animate-fade-in delay-700">
+        <div className="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-16 text-lg text-gray-300 animate-fade-in delay-900 mt-16">
           <div className="flex items-center space-x-4">
             <div className="flex -space-x-4">
               {[1, 2, 3, 4, 5].map((i) => (

@@ -1,43 +1,43 @@
 
-import { Zap, Palette, Shield, Code, Smartphone, Globe } from "lucide-react";
+import { Code, Palette, Feather, Users, Wrench, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Optimized for performance with minimal bundle size and zero unnecessary dependencies.",
-    gradient: "from-yellow-400 to-orange-500"
-  },
-  {
-    icon: Palette,
-    title: "Beautiful Design",
-    description: "Carefully crafted components with modern aesthetics and attention to detail.",
-    gradient: "from-pink-400 to-purple-500"
-  },
-  {
-    icon: Shield,
-    title: "Type Safe",
-    description: "Built with TypeScript from the ground up for better developer experience.",
+    icon: Code,
+    title: "Component-based Structure",
+    description: "Modular, reusable components built with React and TypeScript for maximum flexibility and maintainability.",
     gradient: "from-blue-400 to-indigo-500"
   },
   {
-    icon: Code,
-    title: "Developer First",
-    description: "Clean APIs, comprehensive documentation, and extensive customization options.",
+    icon: Users,
+    title: "Developer-friendly",
+    description: "Clean APIs, comprehensive documentation, and extensive examples to get you up and running quickly.",
     gradient: "from-green-400 to-teal-500"
   },
   {
-    icon: Smartphone,
-    title: "Mobile Ready",
-    description: "Responsive design that works flawlessly across all devices and screen sizes.",
+    icon: Palette,
+    title: "Customizable & Lightweight",
+    description: "Highly customizable themes and styles with minimal bundle size impact on your applications.",
     gradient: "from-purple-400 to-pink-500"
   },
   {
+    icon: Github,
+    title: "Open Source & Collaborative",
+    description: "MIT licensed, community-driven development with transparent roadmap and contribution guidelines.",
+    gradient: "from-yellow-400 to-orange-500"
+  },
+  {
+    icon: Wrench,
+    title: "Production Ready",
+    description: "Battle-tested components with comprehensive testing, accessibility support, and performance optimization.",
+    gradient: "from-red-400 to-pink-500"
+  },
+  {
     icon: Globe,
-    title: "Accessible",
-    description: "WCAG 2.1 compliant components with full keyboard navigation support.",
-    gradient: "from-indigo-400 to-blue-500"
+    title: "Modern Standards",
+    description: "Built with the latest web standards, supporting modern browsers with progressive enhancement.",
+    gradient: "from-cyan-400 to-blue-500"
   }
 ];
 
@@ -49,15 +49,15 @@ export const Features = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.1),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.1),transparent_50%)]" />
       
-      <div className="relative max-w-[1440px] mx-auto px-8">
+      <div className="relative max-w-7xl mx-auto px-8">
         <div className="text-center mb-24">
           <h2 className="text-5xl sm:text-6xl font-black mb-8 animate-fade-in">
             <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
-              Why Future DevOps?
+              Why Choose Future DevOps?
             </span>
           </h2>
           <p className="text-2xl text-gray-300 max-w-4xl mx-auto animate-fade-in delay-200 leading-relaxed">
-            Built by developers, for developers. Every component is engineered with production-ready applications in mind.
+            Everything you need to build modern, professional applications with confidence.
           </p>
         </div>
         
