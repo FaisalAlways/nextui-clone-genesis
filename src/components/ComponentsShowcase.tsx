@@ -7,127 +7,162 @@ import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Heart, MessageCircle, Share, ChevronRight } from "lucide-react";
+import { Heart, MessageCircle, Share, ChevronRight, Sparkles } from "lucide-react";
 
 export const ComponentsShowcase = () => {
   const [liked, setLiked] = useState(false);
-  const [progress, setProgress] = useState(33);
+  const [progress, setProgress] = useState(42);
+  const [switchEnabled, setSwitchEnabled] = useState(false);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+    <section id="components" className="py-24 bg-gradient-to-br from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 animate-fade-in">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-black mb-6 animate-fade-in">
             <span className="bg-gradient-to-r from-gray-900 to-blue-900 dark:from-gray-100 dark:to-blue-100 bg-clip-text text-transparent">
-              Components Preview
+              Component Preview
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-in delay-200">
-            Explore our beautiful component library with interactive examples.
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto animate-fade-in delay-200 leading-relaxed">
+            Explore our comprehensive component library with live interactive examples.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Card Example */}
-          <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:-translate-y-1 animate-fade-in delay-300 group">
-            <div className="h-48 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 group-hover:scale-105 transition-transform duration-500"></div>
-            <CardHeader>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+          {/* Enhanced Card Example */}
+          <Card className="overflow-hidden hover:shadow-2xl transition-all duration-700 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:-translate-y-2 animate-fade-in delay-300 group border-0 shadow-lg">
+            <div className="h-56 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 relative group-hover:scale-105 transition-transform duration-700 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="absolute top-4 right-4">
+                <Badge className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                  <Sparkles className="w-3 h-3 mr-1" />
+                  Premium
+                </Badge>
+              </div>
+            </div>
+            <CardHeader className="pb-4">
               <div className="flex items-center space-x-4">
-                <Avatar className="hover:scale-110 transition-transform duration-200">
+                <Avatar className="hover:scale-110 transition-transform duration-300 w-12 h-12 border-2 border-white shadow-lg">
                   <AvatarImage src="/placeholder.svg" />
-                  <AvatarFallback>JD</AvatarFallback>
+                  <AvatarFallback className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold">
+                    FD
+                  </AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle className="text-lg dark:text-gray-100">John Doe</CardTitle>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">@johndoe</p>
+                  <CardTitle className="text-xl dark:text-gray-100">Future DevOps</CardTitle>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 font-medium">@futuredevops</p>
                 </div>
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
-                "NextUI has completely transformed how I build interfaces. The components are beautiful and the developer experience is amazing!"
+              <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                "Building the future of React UI components. Clean, accessible, and beautifully designed for modern applications."
               </p>
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-6">
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={() => setLiked(!liked)}
-                    className={`${liked ? "text-red-500" : "text-gray-500 dark:text-gray-400"} hover:scale-110 transition-all duration-200`}
+                    className={`${liked ? "text-red-500" : "text-gray-500 dark:text-gray-400"} hover:scale-110 transition-all duration-300 font-medium`}
                   >
-                    <Heart className={`w-4 h-4 mr-1 transition-all duration-300 ${liked ? "fill-current scale-110" : ""}`} />
+                    <Heart className={`w-5 h-5 mr-2 transition-all duration-300 ${liked ? "fill-current scale-110" : ""}`} />
                     {liked ? "Liked" : "Like"}
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-gray-500 dark:text-gray-400 hover:scale-110 transition-all duration-200">
-                    <MessageCircle className="w-4 h-4 mr-1" />
+                  <Button variant="ghost" size="sm" className="text-gray-500 dark:text-gray-400 hover:scale-110 transition-all duration-300 font-medium">
+                    <MessageCircle className="w-5 h-5 mr-2" />
                     Comment
                   </Button>
-                  <Button variant="ghost" size="sm" className="text-gray-500 dark:text-gray-400 hover:scale-110 transition-all duration-200">
-                    <Share className="w-4 h-4 mr-1" />
+                  <Button variant="ghost" size="sm" className="text-gray-500 dark:text-gray-400 hover:scale-110 transition-all duration-300 font-medium">
+                    <Share className="w-5 h-5 mr-2" />
                     Share
                   </Button>
                 </div>
-                <Badge className="bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 animate-pulse">
+                <Badge className="bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/50 dark:to-indigo-900/50 text-blue-700 dark:text-blue-300 animate-pulse font-medium">
                   Featured
                 </Badge>
               </div>
             </CardContent>
           </Card>
 
-          {/* Interactive Components */}
-          <Card className="hover:shadow-xl transition-all duration-500 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:-translate-y-1 animate-fade-in delay-500">
+          {/* Enhanced Interactive Components */}
+          <Card className="hover:shadow-2xl transition-all duration-700 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:-translate-y-2 animate-fade-in delay-500 border-0 shadow-lg">
             <CardHeader>
-              <CardTitle className="dark:text-gray-100">Interactive Controls</CardTitle>
+              <CardTitle className="dark:text-gray-100 text-2xl font-bold">Interactive Controls</CardTitle>
+              <p className="text-gray-600 dark:text-gray-400">Experience our component interactions</p>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium dark:text-gray-200">Theme Toggle</label>
-                <div className="flex items-center space-x-2">
-                  <span className="text-sm dark:text-gray-300">Light</span>
-                  <Switch className="hover:scale-110 transition-transform duration-200" />
-                  <span className="text-sm dark:text-gray-300">Dark</span>
+            <CardContent className="space-y-8">
+              <div className="space-y-3">
+                <label className="text-sm font-semibold dark:text-gray-200 flex items-center justify-between">
+                  Theme Toggle
+                  <Badge variant="outline" className="text-xs">
+                    {switchEnabled ? 'Dark' : 'Light'}
+                  </Badge>
+                </label>
+                <div className="flex items-center space-x-3">
+                  <span className="text-sm dark:text-gray-300 font-medium">Light</span>
+                  <Switch 
+                    checked={switchEnabled}
+                    onCheckedChange={setSwitchEnabled}
+                    className="hover:scale-110 transition-transform duration-300" 
+                  />
+                  <span className="text-sm dark:text-gray-300 font-medium">Dark</span>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium dark:text-gray-200">Volume Control</label>
-                <Slider defaultValue={[50]} max={100} step={1} className="py-4 hover:scale-105 transition-transform duration-200" />
+              <div className="space-y-3">
+                <label className="text-sm font-semibold dark:text-gray-200">Volume Control</label>
+                <Slider 
+                  defaultValue={[65]} 
+                  max={100} 
+                  step={1} 
+                  className="py-4 hover:scale-105 transition-transform duration-300" 
+                />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium dark:text-gray-200">Progress ({progress}%)</label>
-                <Progress value={progress} className="h-2 hover:scale-105 transition-transform duration-200" />
-                <div className="flex space-x-2">
+              <div className="space-y-3">
+                <label className="text-sm font-semibold dark:text-gray-200 flex items-center justify-between">
+                  Loading Progress
+                  <Badge className="text-xs bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">
+                    {progress}%
+                  </Badge>
+                </label>
+                <Progress value={progress} className="h-3 hover:scale-105 transition-transform duration-300" />
+                <div className="flex space-x-3">
                   <Button 
                     size="sm" 
-                    onClick={() => setProgress(Math.max(0, progress - 10))}
-                    className="hover:scale-105 transition-all duration-200"
+                    variant="outline"
+                    onClick={() => setProgress(Math.max(0, progress - 15))}
+                    className="hover:scale-105 transition-all duration-300 font-medium"
                   >
-                    -10%
+                    -15%
                   </Button>
                   <Button 
                     size="sm" 
-                    onClick={() => setProgress(Math.min(100, progress + 10))}
-                    className="hover:scale-105 transition-all duration-200"
+                    onClick={() => setProgress(Math.min(100, progress + 15))}
+                    className="hover:scale-105 transition-all duration-300 font-medium"
                   >
-                    +10%
+                    +15%
                   </Button>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                <Button variant="default" size="sm" className="hover:scale-105 transition-all duration-200">Primary</Button>
-                <Button variant="secondary" size="sm" className="hover:scale-105 transition-all duration-200">Secondary</Button>
-                <Button variant="outline" size="sm" className="hover:scale-105 transition-all duration-200">Outline</Button>
-                <Button variant="ghost" size="sm" className="hover:scale-105 transition-all duration-200">Ghost</Button>
+              <div className="space-y-3">
+                <label className="text-sm font-semibold dark:text-gray-200">Button Variants</label>
+                <div className="flex flex-wrap gap-3">
+                  <Button variant="default" size="sm" className="hover:scale-105 transition-all duration-300 font-medium">Primary</Button>
+                  <Button variant="secondary" size="sm" className="hover:scale-105 transition-all duration-300 font-medium">Secondary</Button>
+                  <Button variant="outline" size="sm" className="hover:scale-105 transition-all duration-300 font-medium">Outline</Button>
+                  <Button variant="ghost" size="sm" className="hover:scale-105 transition-all duration-300 font-medium">Ghost</Button>
+                </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
         <div className="text-center animate-fade-in delay-700">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 hover:scale-105 transition-all duration-200 hover:shadow-lg">
-            View All Components
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 hover:scale-105 transition-all duration-300 hover:shadow-xl px-8 py-4 text-lg font-semibold">
+            Explore All Components
             <ChevronRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>

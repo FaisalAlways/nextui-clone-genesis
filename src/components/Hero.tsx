@@ -1,62 +1,68 @@
 
-import { ArrowRight, Play, Star } from "lucide-react";
+import { ArrowRight, Play, Star, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export const Hero = () => {
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-purple-600/10" />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-400/30 rounded-full blur-3xl animate-pulse delay-1000" />
+    <section className="relative py-24 lg:py-40 overflow-hidden">
+      {/* Enhanced background with more sophisticated gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950" />
+      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-2xl animate-pulse delay-500" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <Badge className="mb-6 bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border-blue-200 animate-fade-in">
-          <Star className="w-4 h-4 mr-1 fill-current animate-spin-slow" />
-          New in v2.4.0
+        <Badge className="mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/50 dark:to-indigo-900/50 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 animate-fade-in shadow-lg">
+          <Github className="w-4 h-4 mr-1 animate-spin-slow" />
+          Open Source • MIT License
         </Badge>
         
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in delay-200">
-          <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">
-            Beautiful, fast and
-          </span>
-          <br />
-          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-            modern React UI
+        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 animate-fade-in delay-200">
+          <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 dark:from-gray-100 dark:via-blue-100 dark:to-indigo-100 bg-clip-text text-transparent leading-tight">
+            Future DevOps
           </span>
         </h1>
         
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in delay-300">
-          Make beautiful websites regardless of your design experience. NextUI provides a simple, modular and accessible component library that gives you the building blocks you need.
+        <p className="text-2xl sm:text-3xl font-light text-gray-700 dark:text-gray-300 mb-4 animate-fade-in delay-300">
+          Professional React UI Components
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in delay-500">
-          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-3 text-lg transform hover:scale-105 transition-all duration-200 hover:shadow-lg">
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in delay-400">
+          Build modern applications with our comprehensive library of beautiful, accessible, and fully customizable React components. Designed for developers who demand excellence.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in delay-500">
+          <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 hover:shadow-xl shadow-blue-500/25">
             Get Started
             <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-3 text-lg border-gray-300 hover:border-blue-300 transform hover:scale-105 transition-all duration-200 hover:shadow-lg">
+          <Button variant="outline" size="lg" className="px-10 py-4 text-lg font-semibold border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
             <Play className="w-5 h-5 mr-2 transition-transform group-hover:scale-110" />
-            Watch Demo
+            View Components
           </Button>
         </div>
         
-        <div className="flex justify-center items-center space-x-8 text-sm text-gray-500 dark:text-gray-400 animate-fade-in delay-700">
-          <div className="flex items-center space-x-2">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
+        <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-12 text-sm text-gray-500 dark:text-gray-400 animate-fade-in delay-700">
+          <div className="flex items-center space-x-3">
+            <div className="flex -space-x-3">
+              {[1, 2, 3, 4, 5].map((i) => (
                 <div 
                   key={i} 
-                  className="w-8 h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full border-2 border-white dark:border-gray-800 transform hover:scale-110 transition-transform duration-200"
+                  className="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full border-3 border-white dark:border-gray-900 transform hover:scale-110 transition-transform duration-300 shadow-lg"
                   style={{ animationDelay: `${i * 100}ms` }}
                 />
               ))}
             </div>
-            <span>1000+ developers</span>
+            <span className="font-medium">2000+ developers</span>
           </div>
-          <div className="flex items-center space-x-1">
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400 animate-pulse" />
-            <span>4.9/5 rating</span>
+          <div className="flex items-center space-x-2">
+            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" />
+            <span className="font-medium">MIT Licensed</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Github className="w-5 h-5" />
+            <span className="font-medium">Open Source</span>
           </div>
         </div>
       </div>
