@@ -1,5 +1,5 @@
 
-import { Code, Palette, Feather, Users, Wrench, Globe } from "lucide-react";
+import { Code, Palette, Feather, Users, Wrench, Globe, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
